@@ -24,14 +24,6 @@ public abstract class Animal {
 		this.mature = false;
 	}
 
-	public boolean isAlive() {
-		return alive;
-	}
-
-	public boolean isMature() {
-		return mature;
-	}
-
 	public void born() {
 		this.alive = true;
 	}
@@ -39,9 +31,17 @@ public abstract class Animal {
 	public void die() {
 		this.alive = false;
 	}
+	
+	public boolean isAlive() {
+		return alive;
+	}
 
 	public void growUp() {
 		mature = true;
+	}
+	
+	public boolean isMature() {
+		return mature;
 	}
 	
 	public void setMoved() {
