@@ -32,7 +32,7 @@ public class FoxAndRabbit {
 			change();
 			frame.repaint();
 			try {
-				Thread.sleep(100);	// 可以设计帧率
+				Thread.sleep(100);	// 可以设置帧率，现在是10帧
 			} catch ( InterruptedException e ) {
 				e.printStackTrace();
 			}
@@ -70,7 +70,7 @@ public class FoxAndRabbit {
 			}
 		}
 	}
-	
+
 	public static void animalMove(Animal animal, int row, int col) {
 		animal.setMoved();
 		if (animal instanceof Fox) {
@@ -83,14 +83,14 @@ public class FoxAndRabbit {
 			}
 		}
 	}
-	
+
 	private static void animalEat(Animal animal, int row, int col) {
 		Location rabbit_loc = animal.eat(field.getRabbitNeighbourLoc(row, col));
 		if ( null != rabbit_loc ) {
 			field.remove(rabbit_loc.row, rabbit_loc.col);
 		}
 	}
-	
+
 	private static void animalBreed(Animal animal, int row, int col) {
 		Location breed_loc = animal.breed(field.getFreeNeighbourLoc(row, col));
 		if ( null != breed_loc ) {
